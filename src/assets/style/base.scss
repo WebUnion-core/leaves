@@ -1,0 +1,157 @@
+// 预设
+$color-text-placeholder: #a3a3a3; // placeholder
+$color-link: #00a4e9; // link
+$color-shadow: rgba(0,0,0,0.25); // 阴影色
+$fill-tap: #dddddd; // 默认背景按下
+$color-text-placeholder-inverse: #FFFFFF; // placeholder反色
+$brand-primary: #00a4e9; // 主色
+$brand-primary-heavy: #3456c1; // 主色深色
+$fill-body: #F6F7F8; // 页面背景
+$color-text-base: #4A4A4A; // 默认文字
+$color-text-heavy: #333333; // 默认文字深色
+$color-text-thin: #666666; // 默认文字浅色
+$color-text-inverse: #FFFFFF; // 默认文字反色
+$fill-base: #979797; // 组件默认背景
+$fill-thin: #F4F4F4; // 组件默认背景浅色
+$fill-inverse: #FFFFFF; // 组件默认背景反色
+$border-color-base: #979797; // 基本边框色
+$border-color-thin: #ececec; // 基本边框浅色
+$fill-overlay-base: rgba(0,0,0,0.5); // 浮层背景
+$fill-overlay-inverse: rgba(0,0,0,0.8); // 浮层背景反色
+
+// 色板
+$yellow1: #FAB525;
+$yellow2: #F9C900;
+$yellow3: #FFAC00;
+$yellow4: #FF8434;
+$gray1: #818181;
+$gray2: #AFAFAF;
+$gray3: #b4b4b4;
+$gray4: #cccccc;
+$gray5: #f1f1f1;
+$gray6: #D2CECD;
+$gray7: #F8F8F8;
+$black1: #222222;
+$black2: #241916;
+$black3: #231815;
+$red1: #FE1400;
+
+/**
+ * 快速转换rem
+ * $px为需要转换的字号
+ */
+@function pxToRem($px){
+	@return $px / 0.5px * 1rem;
+}
+
+// 线性渐变
+@mixin linear_gradient ($float: to right, $startColor: $green1, $endColor: $green2) {
+	background: linear-gradient($float, $startColor, $endColor);
+}
+
+// input组件placeholder
+@mixin input_placeholder ($color: $color-text-placeholder-inverse) {
+    &::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder, textarea:-moz-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder, textarea::-moz-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder, textarea:-ms-input-placeholder {
+        color: $color;
+    }
+}
+
+// 单行省略
+@mixin single-line-omit ($width) {
+	width: $width; // 限制宽度
+    text-overflow: ellipsis; // 超出部分省略号表示
+    overflow: hidden; // 超出部分隐藏
+    white-space: nowrap;
+}
+
+// position竖直居中
+.position-vertical-middle {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+// 居左
+.left {
+	float: left;
+}
+
+// 居右
+.right {
+	float: right;
+}
+
+// 显示
+.show {
+	display: initial;
+}
+
+// 隐藏
+.hide {
+	display: none;
+}
+
+// flex完全居中
+.flex-complete-middle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+// flex竖直居中
+.flex-vertical-middle {
+	display: flex;
+	align-items: center;
+}
+
+// flex水平居中
+.flex-horizontal-middle {
+	display: flex;
+	justify-content: center;
+}
+
+// 容器
+.container {
+	flex: 1;
+}
+
+// 水平线
+.h-line {
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		display: block;
+		width: 100%;
+		height: 1px;
+		background-color: #E9E9E9;
+		transform: scaleY(0.5);
+	}
+}
+
+// 垂直线
+.v-line {
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		right: 0;
+		display: block;
+		width: 1px;
+		height: 100%;
+		background-color: #E9E9E9;
+		transform: scaleX(0.5);
+	}
+}

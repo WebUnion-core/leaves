@@ -1,0 +1,11 @@
+@import "./../../assets/style/base.scss";
+
+.setting-container {
+    @extend .container;
+    padding: pxToRem(40px) pxToRem(20px) 0;
+    font-size: pxToRem(16px);
+
+    .MuiFormControl-root {
+        width: 100%;
+    }
+}

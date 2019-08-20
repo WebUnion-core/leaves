@@ -1,0 +1,18 @@
+@import "./../../assets/style/base.scss";
+
+.nav-header-container {
+    height: pxToRem(50px);
+    font-size: pxToRem(16px);
+    border-bottom: 1px solid #e8e8e8;
+
+    .link {
+        @extend .flex-vertical-middle;
+        float: left;
+        height: inherit;
+        padding: 0 pxToRem(20px);
+
+        &.active {
+            border-bottom: 1px solid $color-link;
+        }
+    }
+}
